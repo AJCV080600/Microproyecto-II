@@ -1,4 +1,5 @@
-<div class="card" style="width: 450px; height: auto; margin-left: 450px;">
+<div style="display: flex; justify-content: center;">
+  <div class="card" style="width: 450px; height: auto;">
     <img [src]="char.image" class="card-img-top" alt={{char.name}}>
     <div class="card-body">
       <h5 class="card-title">{{char.name}}</h5>
@@ -9,4 +10,5 @@
       <p class="card-text">Created: {{char.created}}</p>
       <a href="#" class="btn btn-primary" [routerLink]="['/characters']">Return</a>
     </div>
+  </div>
 </div>

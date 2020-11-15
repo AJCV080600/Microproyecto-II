@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { APIResponse } from 'src/app/models/apiresponse';
 import { Character } from 'src/app/models/character';
 import { APIRequestService } from 'src/app/services/apirequest.service';
@@ -13,11 +14,14 @@ export class CharactersChartComponent implements OnInit {
   page: APIResponse;
   characters: Array<Character> = [];
   isAuthenticated: boolean;
+  url: string = 'https://rickandmortyapi.com/api/character/';
+  filterURL: string;
 
-  constructor(private api: APIRequestService, private authService: AuthService) { }
+  constructor(private api: APIRequestService, private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getPage('https://rickandmortyapi.com/api/character');
+    this.getFilterURL();
+    this.getPage(this.url);
     this.isAuthenticated = this.authService.isAuthenticated();
   }
 
@@ -25,7 +29,9 @@ export class CharactersChartComponent implements OnInit {
     this.api.getPage(pageURL).then((response) => {
       this.page = response.data;
       this.characters = response.data.results;
-    }).catch((err) => {console.log(err)});
+    }).catch((err) => {console.log(err)
+    this.router.navigate(['characters'])
+    alert('No results match your search criteria')});
   }
 
   getNextPage(actualPage: APIResponse) {
@@ -42,4 +48,12 @@ export class CharactersChartComponent implements OnInit {
     }).catch((err) => {console.log(err)});
   }
 
+  getFilterURL(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.filterURL = params.get('filter');
+      if (this.filterURL) {
+        this.url = this.url + this.filterURL;
+      }
+    })
+  }
 }

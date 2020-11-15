@@ -15,7 +15,7 @@
         <td>{{char.name}}</td>
         <td>
             <br><button class="btn btn-success btn-sm" style="width:100px;" *ngIf="isAuthenticated">Favourite</button>
-            <br><a class="btn btn-info btn-sm" style="width:100px;" [routerLink]="['/character/info',char.id]">Information</a>
+            <br><a class="btn btn-info btn-sm" style="width:100px;" [routerLink]="['/characters/info',char.id]">Information</a>
         </td>
       </tr>
     </tbody>

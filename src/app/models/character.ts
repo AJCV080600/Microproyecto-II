@@ -16,6 +16,7 @@ export interface Character {
     image: string;
     episode: Array<string>;
     url: string;
+    created: string;
     haveLike?: boolean;
     likes?: number;
 }

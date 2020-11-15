@@ -19,7 +19,9 @@ import { CharactersPageComponent } from './pages/characters-page/characters-page
 import { MyFavouritesPageComponent } from './pages/my-favourites-page/my-favourites-page.component';
 import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
 import { CharacterInfoPageComponent } from './pages/character-info-page/character-info-page.component';
-import { CharacterInfoComponent } from './components/character-info/character-info.component'
+import { CharacterInfoComponent } from './components/character-info/character-info.component';
+import { CharactersFilterPageComponent } from './pages/characters-filter-page/characters-filter-page.component';
+import { CharacterFilterComponent } from './components/character-filter/character-filter.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CharacterInfoComponent } from './components/character-info/character-in
     MyFavouritesPageComponent,
     CharactersChartComponent,
     CharacterInfoPageComponent,
-    CharacterInfoComponent
+    CharacterInfoComponent,
+    CharactersFilterPageComponent,
+    CharacterFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { CharacterInfoComponent } from './components/character-info/character-in
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

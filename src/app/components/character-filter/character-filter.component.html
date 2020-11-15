@@ -1,0 +1,21 @@
+<h5>Filter characters</h5>
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Name" formControlName="name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Status" formControlName="status">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Species" formControlName="species">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Type" formControlName="type">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Gender" formControlName="gender">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
