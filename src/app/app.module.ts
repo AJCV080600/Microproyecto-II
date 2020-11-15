@@ -11,11 +11,26 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { environment } from 'src/environments/environment';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { CharactersPageComponent } from './pages/characters-page/characters-page.component';
+import { MyFavouritesPageComponent } from './pages/my-favourites-page/my-favourites-page.component';
+import { CharactersChartComponent } from './components/characters-chart/characters-chart.component';
+import { CharacterInfoPageComponent } from './pages/character-info-page/character-info-page.component';
+import { CharacterInfoComponent } from './components/character-info/character-info.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomePageComponent,
+    CharactersPageComponent,
+    MyFavouritesPageComponent,
+    CharactersChartComponent,
+    CharacterInfoPageComponent,
+    CharacterInfoComponent
   ],
   imports: [
     BrowserModule,

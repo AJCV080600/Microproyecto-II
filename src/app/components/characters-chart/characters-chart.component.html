@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Profile</th>
+        <th scope="col">Name</th>
+        <th scope="col">
+          <button class="btn btn-info btn-sm" (click)="getPrevPage(page)">Prev</button>
+          <button class="btn btn-info btn-sm" (click)="getNextPage(page)">Next</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let char of characters">
+        <th scope="row"><img [src]="char.image" style="width: 150px; height: 150px;"></th>
+        <td>{{char.name}}</td>
+        <td>
+            <br><button class="btn btn-success btn-sm" style="width:100px;" *ngIf="isAuthenticated">Favourite</button>
+            <br><a class="btn btn-info btn-sm" style="width:100px;" [routerLink]="['/character/info',char.id]">Information</a>
+        </td>
+      </tr>
+    </tbody>
+</table>
